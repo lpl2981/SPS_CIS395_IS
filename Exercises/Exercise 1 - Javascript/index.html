@@ -8,12 +8,15 @@
             Old Header
         </header>
     <section>
-        <button>Click Here</button>
+        <button onclick='clickhandler()'>Click Here</button>
     </section>
     <script type="text/javascript">
     function startLogic() {
         var newHtml = '<em>New Header</em>'
         document.getElementById('headerItem').innerHTML = newHtml;
+    }
+    function clickHandler() {
+        alert ('you clicked me');
     }
     startLogic();
     //Get new header
