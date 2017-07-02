@@ -7,3 +7,5 @@ var isEmpty = (testVariable === '');
 document.getElementsById('isUndefined)').innerHTML = isUndefined;
 document.getElementById('isNull').innerHTML = isNull;
 document.getElementById('isEmpty').innerHTML = isEmpty;
+
+var testVariable = 'ABC';
