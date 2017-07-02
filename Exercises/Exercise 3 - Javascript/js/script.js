@@ -8,4 +8,4 @@ document.getElementById('isUndefined').innerHTML = isUndefined;
 document.getElementById('isNull').innerHTML = isNull;
 document.getElementById('isEmpty').innerHTML = isEmpty;
 
-var testVariable
+var testVariable = 'ABC';
