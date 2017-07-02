@@ -12,6 +12,6 @@ function doMore() {
 //adds second alert
 
 function doSomethingElse() {
-    document.writeIn('Test Message');
+    document.writeln('Test Message');
 }
-//should replace html with writein message
+//should replace html with writeln message
