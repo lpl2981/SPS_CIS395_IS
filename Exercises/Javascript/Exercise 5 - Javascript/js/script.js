@@ -2,5 +2,10 @@ function correctMethodName() {
     return "Output Message";
 }
 
-var result = wrongMethodName(3);
-document.writeln(result);
+try {
+    var result = wrongMethodName(3);
+    document.writeln(result);
+}
+catch (error) {
+    document.writeln('An error occurred');
+}
