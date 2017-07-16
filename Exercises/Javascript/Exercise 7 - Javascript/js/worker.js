@@ -1,9 +1,5 @@
 var i = 0;
 
-function timedCount() {
-    i = i + 1;
-    postMessage(i);
-    setTimeout("timedCount()",500);
-}
-
-timedCount();
+self.onmessage = function(event) {
+    document.getElementById("output").innerHTML += '<li>' + event.data + '</li>'
+    }
