@@ -1,12 +1,12 @@
-var worker;
+var worker = new Worker("js/worker.js");
 function startWorker() {
-    worker = new Worker("js/worker.js");
     console.log(worker);
     timedCount();
 }
 var i=0;
 function stopWorker() {
-    worker.terminate();
+    if (worker != null)
+        worker.terminate();
 }
 function timedCount() {
     i = i + 1;
