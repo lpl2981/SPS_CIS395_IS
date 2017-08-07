@@ -15,8 +15,9 @@ define(['N/record'], function(record) {
         var height = record.getFieldValue( {fieldid: record.custitem_nw_is395_item_height_inches} );
         var width = record.getFieldValue( {fieldid: record.custitem_nw_is395_item_width_inches} );
         itemRecord.setValue({
-            fieldid: 'custitem_nw_is395_item_vol_cub_inches',
-            value: length * width * height});
+            fieldId: 'custitem_nw_is395_item_vol_cub_inches',
+            value: length * width * height
+            });
         };
         return {
             beforeSubmit: beforeSubmit
