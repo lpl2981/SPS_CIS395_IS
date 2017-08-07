@@ -4,7 +4,7 @@
  *@NScriptType UserEventScript
  */
 
-define(['N/record'], function(record) {
+define( ['N/record'], function( record ) {
     function beforeSubmit(context) {
         log.debug('beforeSubmit Triggered');
         if (context.type === context.UserEventType.CREATE)
@@ -22,4 +22,4 @@ define(['N/record'], function(record) {
         return {
             beforeSubmit: beforeSubmit
         };
-    });
+    })
