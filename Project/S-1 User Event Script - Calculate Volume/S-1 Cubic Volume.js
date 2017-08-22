@@ -23,3 +23,11 @@ define(['N/record'], function(record) {
             beforeSubmit: beforeSubmit
         };
     })
+
+define([], function() {
+    function beforeSubmit(context) {
+        var record = context.newRecord; // record.Record object, not "record" module
+        var length = record.getValue({ fieldId: "custitem_nw_is395_item_length_inches"})
+        var width = record.getValue({ fieldId: "custitem_nw_is395_item_width_inches"})
+    }
+})
