@@ -4,6 +4,9 @@
  *@NScriptType UserEventScript
  */
 
+define([], function() {
+
+
 var noLines = newRecord.getLineCount({
     sublistId: 'item' // from SO record browser
 }); 
@@ -20,4 +23,5 @@ for (var index = 0; index < noLines; index++) {
 newrecord.SetValue({
     fieldId: 'custbody_nw_is_395_s2_order_space',
     value: total
-});
+})
+}); 
