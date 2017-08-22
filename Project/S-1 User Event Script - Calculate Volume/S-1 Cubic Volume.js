@@ -4,21 +4,20 @@
  *@NScriptType UserEventScript
  */
 
-define([], function() {
-    function beforeSubmit(context) {
-        var record = context.newRecord; // record.Record object, not "record" module
-        var length = record.getValue({ fieldId: "custitem_nw_is395_item_length_inches"});
-        var width = record.getValue({ fieldId: "custitem_nw_is395_item_width_inches"});
-        var height = record.getValue({ fieldId:"custitem_nw_is395_item_height_inches"});
-        log.debug('testing calculation', length*width*height),
-        record.setValue({
-            fieldId: custitem_nw_is395_item_vol_cub_inches,
-            value: length * width * height
-        });
-    }
-}
+define([], function () {
+  function beforeSubmit(context) {
+    var record = context.newRecord; // record.Record OBJECT NOT "record" module
+    var length = record.getValue({ fieldId: "custitem_nw_is395_item_length_inches" });
+    var width = record.getValue({ fieldId: "custitem_nw_is395_item_width_inches" });
+    var height = record.getValue({ fieldId: "custitem_nw_is395_item_height_inches" });
+    log.debug('testing calculation', length*width*height);
+    record.setValue({
+      fieldId: 'custitem_nw_is395_item_vol_cub_inches',
+      value: length * width * height
+    });
+  }
 
-return {
+  return {
     beforeSubmit: beforeSubmit
-};
+  };
 });
