@@ -10,7 +10,7 @@ function beforeSubmit(context) {
     var truckRecord = search.lookupFields({ type: 'customrecord_nw_is395_delivery_trucks', id: record.getValue({ fieldId: 'custbody_nw_is395_delivery_shipment' }), columns: ['custrecord_nw_is395_sq_ft', 'custrecord_nw_is395_delivery_truck']
 });
     log.debug('look up fields', JSON.stringify(truckRecord));
-    return
+    return;
     var spaceAvailable = record.getValue({ fieldId: 'custrecord_nw_is395_sq_ft' });
     var spaceNeeded = record.getValue({ fieldId: 'custbody_nw_is_395_s2_order_space' });
     var truckStatus = record.getValue({ fieldId: 'custrecord_nw_is395_delivery_truck' });
@@ -20,7 +20,8 @@ function beforeSubmit(context) {
             value: (spaceAvailable - spaceNeeded)
         });
     }
+}
     return {
         beforeSubmit: beforeSubmit
-    };
+    }
 });
