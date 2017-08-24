@@ -26,7 +26,7 @@ function beforeSubmit(context) {
 
     newRecord.SetValue({
         fieldId: 'custbody_nw_is_395_s2_order_space',
-        value: total
+        value: (total/12)
     });
 }
     return {
