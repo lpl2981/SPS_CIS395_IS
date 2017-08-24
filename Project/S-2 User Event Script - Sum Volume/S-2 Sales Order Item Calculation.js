@@ -6,6 +6,7 @@
 
 define([], function() {
 function beforeSubmit(context) {
+    var newRecord = context.newRecord;
     var noLines = newRecord.getLineCount({
         sublistId: 'item' // from Sales Order record browser
     }); 
