@@ -4,7 +4,7 @@
  *@NScriptType UserEventScript
  */
 
-define(['N/search'], function() {
+define(['N/search'], function(search) {
 function beforeSubmit(context) {
     var newRecord = context.newRecord;
     var record = context.newRecord; // loads record object for the Sales Order
