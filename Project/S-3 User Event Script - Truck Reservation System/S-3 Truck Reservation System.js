@@ -6,6 +6,7 @@
 
 define(['N/search'], function() {
 function beforeSubmit(context) {
+    var newRecord = context.newRecord;
     var record = context.newRecord; // loads record object for the Sales Order
     var truckRecord = search.lookupFields({ type: 'customrecord_nw_is395_delivery_trucks', id: record.getValue({ fieldId: 'custbody_nw_is395_delivery_shipment' }), columns: ['custrecord_nw_is395_sq_ft', 'custrecord_nw_is395_delivery_truck']
 });

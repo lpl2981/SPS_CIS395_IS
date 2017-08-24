@@ -25,7 +25,7 @@ function beforeSubmit(context) {
         });
         }
 
-    newRecord.SetValue({
+    newRecord.setValue({
         fieldId: 'custbody_nw_is_395_s2_order_space',
         value: (total/12)
     });
