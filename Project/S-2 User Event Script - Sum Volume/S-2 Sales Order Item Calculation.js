@@ -18,6 +18,10 @@ function beforeSubmit(context) {
             fieldId: 'custcol_nw_is395_item_cubic_inches',
             line: index 
         });
+    log.debug({
+      title: 'value of Total',
+      details: 'Value of Total: ' + total + typeof(total)
+    });
         total * newRecord.getSublistValue({
             sublistId: 'item',
             fieldId: 'quantity',
@@ -27,7 +31,7 @@ function beforeSubmit(context) {
 
     newRecord.setValue({
         fieldId: 'custbody_nw_is_395_s2_order_space',
-        value: (total/12)
+        value: Math.round(total/1728)
     });
 }
     return {
