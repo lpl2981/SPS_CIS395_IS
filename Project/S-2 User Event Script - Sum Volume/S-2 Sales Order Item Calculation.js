@@ -22,7 +22,7 @@ function beforeSubmit(context) {
       title: 'value of Total',
       details: 'Value of Total: ' + total + typeof(total)
     });
-        total * newRecord.getSublistValue({
+        total *= newRecord.getSublistValue({
             sublistId: 'item',
             fieldId: 'quantity',
             line: index
@@ -31,7 +31,8 @@ function beforeSubmit(context) {
 
     newRecord.setValue({
         fieldId: 'custbody_nw_is_395_s2_order_space',
-        value: Math.round(total/1728)
+        value: parseInt(total/1728)
+        //value: Math.round(total/1728)
     });
 }
     return {
