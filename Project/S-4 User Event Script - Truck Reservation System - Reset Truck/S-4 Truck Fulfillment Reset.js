@@ -30,20 +30,21 @@ function beforeSubmit(context) {
             title: 'truckStatus',
             details: 'Value of Truck Status : ' + truckStatus
         });
-        record.submitFields({
-            type: 'customrecord_nw_is395_delivery_trucks',
-            id: IFRecord.getValue({ fieldId: 'custbody_nw_is395_delivery_shipment' }),
-            values: {
-            custrecord_nw_is395_sq_ft: (Number(spaceAvailable) + Number(spaceReturned)),
-            custrecord_nw_is395_delivery_truck: 2
+    record.submitFields({
+        type: 'customrecord_nw_is395_delivery_trucks',
+        id: IFRecord.getValue({ fieldId: 'custbody_nw_is395_delivery_shipment' }),
+        values: {
+        custrecord_nw_is395_sq_ft: (Number(spaceAvailable) + Number(spaceReturned)),
+        custrecord_nw_is395_delivery_truck: 2
         }
+    });
+    var spaceAvailable = Number(spaceAvailable) + Number(spaceReturned)
+        log.debug({
+            title: 'spaceAvailable calc',
+            details: 'Value of space available after calc : ' + spaceAvailable
         });
-if (spaceAvailable == maxSpace) {
-        log.debug('square feet')
-            //record.submitField({
-                //fieldId: "custrecord_nw_is395_sq_ft",
-                //value: (spaceAvailable - spaceReturned)
-            //});
+if (Number(spaceAvailable) == Number(maxSpace)) {
+    log.debug('square feet')
     record.submitFields({
         type: 'customrecord_nw_is395_delivery_trucks',
         id: IFRecord.getValue({ fieldId: 'custbody_nw_is395_delivery_shipment' }),
